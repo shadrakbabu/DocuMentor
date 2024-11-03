@@ -1,0 +1,165 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMentor </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    
+</head>
+<body>
+    <header> 
+        <div class="logo">
+            <a href="{% url 'home' %}"> DocuMentor </a>
+        </div>
+        <div class="search">
+        <nav>
+            <!-- Other navigation links -->
+            <form id="search-form" method="GET" class="search-form" autocomplete="off">
+                <input type="text" id="search-input" name="q" placeholder="Search..." required>
+                <button type="submit" class="search__button">
+                    <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <g>
+                        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                    </g>
+                </svg>
+            </button>
+                <div id="search-results" class="search-results-dropdown"></div>
+            </form>
+        </nav>
+        </div>
+
+
+        
+        <script>
+            document.getElementById('search-input').addEventListener('input', function() {
+                const query = this.value;
+            
+                // If the input is empty, hide the results
+                if (!query) {
+                    document.getElementById('search-results').style.display = 'none';
+                    return;
+                }
+            
+                fetch(`/search/?q=${query}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const resultsDropdown = document.getElementById('search-results');
+                        resultsDropdown.innerHTML = ''; // Clear previous results
+            
+                        if (data.community_posts.length || data.resources.length || data.tutorials.length) {
+                            resultsDropdown.style.display = 'block'; // Show the dropdown
+            
+                            const ul = document.createElement('ul'); // Create a list for results
+            
+                            // Add community posts
+                            data.community_posts.forEach(post => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<a href="/community/${post.id}">${post.heading}</a>`;
+                                ul.appendChild(li);
+                            });
+            
+                            // Add resources
+                            data.resources.forEach(resource => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<a href="/resources/${resource.id}">${resource.file_name}</a>`;
+                                ul.appendChild(li);
+                            });
+            
+                            // Add tutorials
+                            data.tutorials.forEach(tutorial => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<a href="/tutorials/${tutorial.id}">${tutorial.topic}</a>`;
+                                ul.appendChild(li);
+                            });
+            
+                            resultsDropdown.appendChild(ul); // Add the list to the dropdown
+                        } else {
+                            resultsDropdown.style.display = 'none'; // No results, hide dropdown
+                        }
+                    });
+            });
+            
+            // Hide the results when clicking outside the input
+            document.addEventListener('click', function(event) {
+                const resultsDropdown = document.getElementById('search-results');
+                if (!document.getElementById('search-form').contains(event.target)) {
+                    resultsDropdown.style.display = 'none'; // Hide dropdown
+                }
+            });
+            </script>
+        <!-- script for search starts here-->
+        <script src="{% static 'js/search.js' %}"></script>
+        <!-- script for search ends here -->
+
+
+        <div class="profile-menu">
+            <div class="profile-icon" onclick="toggleDropdown()"><img  src="{% static 'user.png' %}" style="height:35px; width: 35px;"></div>
+            <div class="dropdown-content" id="dropdown-content">
+                <a href="{% url 'log' %}"><span class="icon"> <img  src="{% static 'user.png' %}" style="height:24px; width: 24px;"></span> 
+                    {% if user.is_authenticated %} 
+                    {{ user.username }}   
+                    {% else %}
+                        <a href="{% url 'login' %}"> Sign in</a>
+                    {% endif %}
+                </a>
+                <a href="#settings"><span class="icon"><img  src="{% static 'setting.png' %}" style="height:24px; width: 24px;"></span>Settings</a>
+                <a href="{% url 'logout' %}"><span class="icon"><img  src="{% static 'logout.png' %}" style="height:24px; width: 24px;"></span>Sign-Out</a>
+            </div>
+        </div>
+    </header> 
+    <main>
+        <div class="sidebar">
+            <nav>
+                <a href="{% url 'home' %}" class="{% if request.path == '/home/' %}active{% endif %}">
+                    <div class="icon-text">
+                        <img src="{% static 'home.svg' %}" alt="Home Icon">
+                        <span>Home</span>
+                    </div>
+                </a>
+        
+                <a href="{% url 'community' %}" class="{% if request.path == '/community/' %}active{% endif %}">
+                    <div class="icon-text">
+                        <img src="{% static 'community.svg' %}" alt="Communities Icon"> 
+                        <span>Communities</span>
+                    </div>
+                </a>
+        
+                <a href="{% url 'resources' %}" class="{% if request.path == '/resources/' %}active{% endif %}">
+                    <div class="icon-text">
+                        <img src="{% static 'folder.svg' %}" alt="Resources Icon"> 
+                        <span>Resources</span>
+                    </div>
+                </a>
+        
+                <a href="{% url 'tutorials' %}" class="{% if request.path == '/tutorials/' %}active{% endif %}">
+                    <div class="icon-text">
+                        <img src="{% static 'teaching.svg' %}" alt="Tutorials Icon"> 
+                        <span>Tutorials</span>
+                    </div>
+                </a>
+            </nav>
+        </div>
+        
+        
+<body>
+    <main>
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block content %}
+    <!-- Content specific to each page will be inserted here -->
+    {% endblock %}
+</main>
+</body>
+<a href="{% url 'file1' %}">
+    <button class="floating-btn"> <img src="{% static 'pluswhite.svg' %}"/></button></a>
+</html>

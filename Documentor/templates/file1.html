@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main-content">
+        <div class="sine">
+            <ul class="link-list">
+                <li>
+                    <a href="{% url 'create_post' %}">
+                        <img src="{% static 'question_icon.png' %}" alt="Question Icon"> Create a Post
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'upload_document' %}">
+                        <img src="{% static 'upload 1.png' %}" alt="Upload Icon"> Upload a Document
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'refer_video' %}">
+                        <img src="{% static 'link 1.png' %}" alt="Refer Icon"> Refer a Video
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

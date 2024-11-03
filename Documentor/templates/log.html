@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-details">
+        <label for="username">Username</label>
+        <p id="username"> 
+            {% if user.is_authenticated %} 
+                {{ user.username }}
+            {% else %}
+                User not logged in
+            {% endif %}
+        </p>
+        
+        <label for="email">Email</label>
+        <p id="email"> 
+            {% if user.is_authenticated %} 
+                {{ user.email }}
+            {% else %}
+                Email not available
+            {% endif %}
+        </p>
+        
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="logout-btn"> Signout</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

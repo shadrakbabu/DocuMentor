@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="heigth">
+  <div class="ask">
+    <h1>Ask a Question</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <div>
+        {{ form.heading.label_tag }}
+        {{ form.heading }}
+      </div>
+      <div>
+        {{ form.community.label_tag }}
+        {{ form.community }}
+      </div>
+      <div>
+        {{ form.content.label_tag }}
+        {{ form.content }}
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

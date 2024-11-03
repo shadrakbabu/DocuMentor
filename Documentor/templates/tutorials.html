@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="tutorial-list">
+        {% for tutorial in tutorials %}
+            <div class="tutorial-item">
+                <div class="tutorial-header">
+                    <h3>{{ tutorial.topic }}</h3>
+                    <button onclick="window.open('{{ tutorial.video_link }}', '_blank')" class="watch-video-button">
+                        Watch Video
+                    </button>
+                </div>
+                <p>- referred by {{ tutorial.user.username }}</p>
+            </div>
+        {% empty %}
+            <p>No tutorials available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

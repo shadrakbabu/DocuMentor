@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in now</title>
+   <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+   <!-- google fonts cdn starts -->
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+   <!-- google fonts cdn ends-->
+
+
+   <style>
+    h5{
+        color:red
+    }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign-in</h1>
+
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {% endfor %}
+        
+        <form class="quote" method="POST" action="{% url 'temp' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" placeholder="Enter your Username" name="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" name="password">
+            </div>
+            <button class="button" type="submit">Sign in</button>
+            <p> Not Signed Up <a href="{% url 'Signup' %}"> Sign Up</a></p>
+        </form>
+    </div>
+</body>
+</html>

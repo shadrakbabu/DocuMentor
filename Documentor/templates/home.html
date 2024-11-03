@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <!-- Box 1: Communities (Full width) -->
+    <div class="box large-box">
+        <a href="{% url 'community' %}">
+            <img src="{% static 'community.svg' %}" alt="Communities Icon">
+            <h2>Communities</h2>
+        </a>
+    </div>
+
+    <!-- Box 2: Resources (Half width) -->
+    <div class="box small-box">
+        <a href="{% url 'resources' %}">
+            <img src="{% static 'folder.svg' %}" alt="Resources Icon">
+            <h2>Resources</h2>
+        </a>
+    </div>
+
+    <!-- Box 3: Tutorials (Half width) -->
+    <div class="box small-box">
+        <a href="{% url 'tutorials' %}">
+            <img src="{% static 'teaching.svg' %}" alt="Tutorials Icon">
+            <h2>Tutorials</h2>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

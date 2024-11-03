@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="content1" class="content">
+    <div class="scrollable-section">
+        {% for post in posts %}
+        <div class="post">
+            <h2>{{ post.heading }}</h2>
+            <p>{{ post.content }}</p>
+
+            <!-- Display the Community of the Post -->
+            <p>in - <strong>{{ post.community }}</strong> community </p>
+
+            <!-- Comment Icon and Count -->
+            <button class="comment-btn" onclick="window.location.href='{% url 'community_detail' post.id %}'">
+                <img src="{% static 'comment.png' %}" alt="Comment Icon"> 
+                {{ post.comments.count }} comments
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

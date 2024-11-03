@@ -1,0 +1,150 @@
+*{
+    font-family: lexend;
+}       
+.container 
+{
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+    margin: 10px auto;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group 
+{
+    margin-bottom: 15px;
+}
+label 
+{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.radio-group 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input[type="radio"] 
+{
+    margin-right: 10px;
+}
+.button 
+{
+    height: 38px;
+    background: #6C63FF;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.button:hover 
+{
+    background: #5753d9;
+}
+p, pre
+{
+    color: #656e6e;
+    margin-top: 0;
+}       
+ 
+/*login page css*/
+
+*{
+    font-family: lexend;
+}
+body, html 
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container 
+{
+    padding: 20px;
+    background: #ffffff;
+    color: #1b1b1b;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.form-group 
+{
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label 
+{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="password"] 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.button 
+{
+    height: 38px;
+    background: #6C63FF;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button_4 
+{
+    height: 38px;
+    background: #ffffff;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000000;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+.button:hover 
+{
+    background-color: #5753d9;
+}  
+
+

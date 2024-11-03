@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="tutorial-detail">
+        <h1>{{ tutorial.topic }}</h1>
+        <p><a href="{{ tutorial.video_link }}" target="_blank">Watch Video</a></p>
+    </div>
+{% endblock %}

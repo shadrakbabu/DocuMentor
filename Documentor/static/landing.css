@@ -1,0 +1,229 @@
+*{
+    margin: 0px; 
+    font-family:Lexend;
+}
+body 
+{
+     position: relative;
+     max-width: 100%;
+     height: 1670px;
+     background: #FFFFFF;
+}
+
+header 
+{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    height: 50px;
+    
+}
+
+.header-container 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    border-radius: 0 0 8px 8px;
+}
+header h1 
+{
+    margin: 0;
+}
+
+nav ul 
+{
+    margin-right:-40px;
+    float: right;
+}
+nav ul li 
+{
+    display: inline;
+}
+nav ul li a 
+{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-top:50px ;
+    margin-right: 5px;
+    margin-top: -px;
+    padding: 15px
+}
+nav ul li a:hover
+{
+    background-color: #6C63FF;
+    color:white;
+    transition: 0.3px;
+    border-radius: 20px;
+}
+nav ul li button{
+    background-color: #2ac57b;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: white;
+
+}
+nav ul li button:hover
+{
+    background-color: #544bfd;
+}
+.section 
+{
+    padding: 50px 0;
+}
+.learn 
+{
+    background-color: #f3f3f3;
+    text-align: left;
+    height: 500px;
+    padding-left: 25px;
+    width:100%;
+}
+.learn h2 
+{
+    margin-top: 100px;
+    margin-left: 146px;
+    font-size:60px;
+    text-align: left; 
+    float: left;   
+}
+.learn p
+{
+ 
+    font-size: 25px;
+    float: left;
+    text-align: left;
+    margin-top: 180px;
+    margin-left:-565px;
+ 
+}
+.learn .content button 
+{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border:none ;
+    cursor: pointer;
+    margin-top: 255px;
+    margin-left: -655px;
+    padding: 10px;
+}
+.learn .content button:hover 
+{
+    background-color: #45a049;
+}
+.explore 
+{
+    background-color: #d4b503;
+    text-align: center;
+    height: 500px;
+    width:100%;
+}
+.explore h2 
+{
+    color: #ffffff;
+    text-align: right;
+    font-size:50px;
+   margin-right: 100px;
+   margin-top: 100px;
+   
+}
+.explore .pe {
+    color: #ffffff;
+   font-size: 25px;
+   float: right;
+   text-align: left;
+   margin-right: 217px;
+   margin-top: 5px;
+}
+.share-resources 
+{
+    background-color: #f3f3f3;
+    text-align: center;
+    height: 500px; ;
+    width:100%;
+}
+.share-resources h2 
+{
+    font-size: 60px;
+    margin-top: 100px;
+    margin-left: 146px;
+    float: left;
+    color: #1E1F78;
+}
+.share-resources .pee
+{
+   
+    font-size: 25px;
+    margin-left:-485px;
+    margin-top:180px;
+    text-align: left;
+    float: left;
+}
+.share-tutorials 
+{
+    background-color: #736bff;
+    text-align: center;
+    height: 500px; ;
+    width:100%;
+}
+.share-tutorials h2 
+{
+    color: #ffffff;
+    text-align: right;
+    font-size:50px; 
+   margin-right: 145px;
+   margin-top: 100px;
+}
+.share-tutorials .pe 
+{
+    color: #ffffff;
+   font-size: 25px;
+   float: right;
+   text-align: left;
+   margin-right: 60px;
+   margin-top: 5px;
+    
+}
+footer 
+{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    height: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.image-container 
+{
+    float: right;
+    margin-right:150px; ;
+    margin-top:50px;
+}
+.image-container1
+{
+    
+    float: left;
+    margin-left:50px; ;
+    margin-top:-50px;
+}
+.image-container2
+{
+      
+    float: right;
+    margin-right:130px; ;
+    margin-top:-230px;
+    top:80%;
+}
+.image-container3
+{
+    float: left;
+    margin-left:80px; ;
+    margin-top:-150px;
+}

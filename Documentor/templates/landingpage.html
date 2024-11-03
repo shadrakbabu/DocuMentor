@@ -1,0 +1,87 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'landing.css' %}">
+
+
+    <!-- google fonts cdn -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- cdn reference ended -->
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1> DocuMentor</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">App</a></li>
+                    <a href="{% url 'login' %}"><li><button>Sign In</button></li></a>
+                    <a href="{% url 'Signup' %}"> <li><button>Sign Up</button></li></a> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section learn">
+            <div class="content">
+                <h2>Learn with people.</h2>
+                <p>Dive into the student communities on different topics,<br>Sharing their experiences, resources, and tutorials.</p>
+                 <a href="{% url 'Signup' %}"> <button>Sign Up</button></a>
+                <div class="image-container">
+                <img src="{% static 'hero image.png' %}" alt="Illustration">
+                </div>
+            
+            </div>
+        </section>
+        <section class="section explore">
+            <div class="content">
+                <h2>Explore our discussions</h2>
+            <div class="pe">  
+                <p>Ask questions on different communities.</p>
+               <p>Share your comments, upvotes.</p>
+              </div>
+                <div class="image-container1">
+                    <img src="{% static '2 hero.png' %}" alt="Illustration">
+                </div>
+            </div>
+        </section>
+        <section class="section share-resources">
+            <div class="content">
+                <h2>Share resources</h2>
+                <div class="pee">
+                    <p>Send the ppts, pdfs, documents files with the people out</p>
+                    <p>there who are eagerly waiting to learn from the</p>
+                    <p>resources.</p>
+                </div>
+                <div class="image-container2">
+                    <img src="{% static '3 hero image.png'%}" alt="Illustration">
+                </div>
+            </div>
+        </section>
+        <section class="section share-tutorials">
+            <div class="content">
+               <h2>Share the best tutorials</h2>
+            <div class="pe">
+                <p>Send the ppts, pdfs, documents files with the people out</p>
+                <p>there who are eagerly waiting to learn from the</p>
+                <p>resources.</p>
+                </div>
+                <div class="image-container3">
+                    <img src="{% static 'last hero.png' %}" alt="Illustration">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p> &copy; 2024 DocuMentor || All rights reserved</p>
+    </footer>
+</body>
+</html>
